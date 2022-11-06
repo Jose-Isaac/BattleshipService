@@ -1,8 +1,15 @@
-package com.jisaacbc.battleshipservice.domain.gameroom
+package com.battleship.battleshipservice.domain.gameroom
 
 import java.util.UUID
+import javax.persistence.Entity
+import javax.persistence.Id
+import javax.persistence.Table
 
-@Enti
+@Entity
+@Table(
+    name = "game_room"
+)
 data class GameRoom(
+    @Id
     val id: UUID
 )
