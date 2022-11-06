@@ -15,5 +15,8 @@ data class Player(
     @Column(unique = true, nullable = false, updatable = false)
     val id: UUID,
 
-    val name: String
+    @Column(unique = true, length = 20)
+    val username: String,
+
+    val password: String
 )

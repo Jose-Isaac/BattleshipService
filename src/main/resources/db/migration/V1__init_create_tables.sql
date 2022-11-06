@@ -11,8 +11,9 @@ create table if not exists board (
 );
 
 create table if not exists player (
-    id      uuid            not null primary key,
-    name    varchar(20)     not null
+    id          uuid            not null primary key,
+    name        varchar(20)     not null unique,
+    password    varchar(255)    not null
 );
 
 create table player_game_room (
