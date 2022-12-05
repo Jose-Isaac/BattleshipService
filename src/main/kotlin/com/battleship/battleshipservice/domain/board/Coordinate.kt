@@ -1,12 +1,13 @@
 package com.battleship.battleshipservice.domain.board
 
-import java.util.UUID
+import kotlinx.serialization.Serializable
 
+@Serializable(with = CoordinateSerializer::class)
 data class Coordinate(
     val axisX: Int,
     val axisY: Int,
-    val occupiedByUser: UUID,
+    val occupiedByPlayer: String? = null,
     val isOccupied: Boolean = false,
     val gotHit: Boolean = false,
-    val wasHitBy: UUID? = null
+    val wasHitBy: String? = null,
 )

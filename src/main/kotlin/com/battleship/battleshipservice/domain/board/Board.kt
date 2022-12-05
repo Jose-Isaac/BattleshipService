@@ -11,14 +11,13 @@ import javax.persistence.Table
 @Table(
     name = "board"
 )
+@kotlinx.serialization.Serializable(with = BoardSerializer::class)
 data class Board(
     @Id
     @Column(nullable = false, unique = true, updatable = false)
-    val id: UUID,
+    val id: UUID = UUID.randomUUID(),
 
-    val gameRoomId: UUID,
+    val plays: String,
 
-    @Type(type = "jsonb")
-    @Column(columnDefinition = "JSONB")
-    val plays: List<Coordinate> = listOfNotNull()
+    val player: String
 )

@@ -11,7 +11,7 @@ import javax.persistence.Table
     name = "player_game_room"
 )
 @IdClass(PlayerGameRoomId::class)
-data class PlayerGameRoom(
+data class PlayersGameRoom(
     @Id
     val playerId: UUID,
 

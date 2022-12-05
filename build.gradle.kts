@@ -22,13 +22,16 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-websocket")
+    implementation("org.springframework.boot:spring-boot-starter-security")
 
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
-    implementation("org.flywaydb:flyway-core")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.flywaydb:flyway-core")
     implementation("com.vladmihalcea:hibernate-types-52:2.20.0")
+    implementation("com.auth0:java-jwt:3.18.1")
 
     runtimeOnly("org.postgresql:postgresql")
 
@@ -38,7 +41,7 @@ dependencies {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
-        freeCompilerArgs = listOf("-Xjsr305=strict")
+        freeCompilerArgs = listOf("-Xjsr305=strict", "-opt-in=kotlin.RequiresOptIn")
         jvmTarget = "17"
     }
 }

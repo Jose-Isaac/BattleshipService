@@ -1,7 +1,7 @@
 package com.battleship.battleshipservice.infrastructure.repositories.playergameroom
 
-import com.battleship.battleshipservice.domain.playergameroom.PlayerGameRoom
+import com.battleship.battleshipservice.domain.playergameroom.PlayersGameRoom
 import com.battleship.battleshipservice.domain.playergameroom.PlayerGameRoomId
 import org.springframework.data.jpa.repository.JpaRepository
 
-interface PlayerGameRoomRepository: JpaRepository<PlayerGameRoom, PlayerGameRoomId>
+interface PlayerGameRoomRepository: JpaRepository<PlayersGameRoom, PlayerGameRoomId>
